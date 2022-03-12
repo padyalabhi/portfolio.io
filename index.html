@@ -7,13 +7,14 @@
     <title>Portfolio</title>
     <base href="/">
     <link rel="stylesheet" href="style.css">
-
+    
 </head>
 <body>
     <header>
         <div class="content">
             <div class="bright">
-                <img src="./icons/brightness icon.png" alt="">
+                <img src="./icons/brightness icon.png" class="bright" alt="">
+                <img src="./icons/nighmode icon.png" class="dark" alt="">
             </div>
             <div class="heading">
                 <span>A</span>
@@ -37,7 +38,14 @@
                       <path class="line line2" d="M 20,50 H 80" />
                       <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
                     </svg>
-                  </button>
+                </button>
+                <div class="menu-page">
+                    <ul class="menu-items">
+                        <li>Projects</li>
+                        <li>Blogs</li>
+                        <li>My Work</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="header_line"></div>
@@ -59,42 +67,54 @@ My goal is to learn technologies which will help industry growth as well as my k
         <section class="screen-2">
             <div class="content">
                 <div class="journey">
-                    <div class="event">
+                    <div class="event" data-progress="16">
                         <div class="year">1997</div>
-                        <div class="info"></div>
+                        <div class="info">Entered on earth in April 1997 and got awful by seeing technological world</div>
                     </div>
-                    <div class="event">
+                    <div class="event" data-progress="33">
                         <div class="year">2013</div>
-                        <div class="info"></div>
+                        <div class="info">Passed my 10 board exam pursuing 89.33 % in Maharashtra board.</div>
                     </div>
-                    <div class="event">
+                    <div class="event" data-progress="50">
                         <div class="year">2015</div>
-                        <div class="info"></div>
+                        <div class="info">Passed my 12 board exam with 73.39 % science background and firsly got interested in Information Technology.</div>
                     </div>
-                    <div class="event">
+                    <div class="event" data-progress="65">
                         <div class="year">2019</div>
-                        <div class="info"></div>
+                        <div class="info">Graduated in Computer Scinece engineering pursuing 5.7 cgpa. Joined Training academy to gain technical skills.</div>
                     </div>
-                    <div class="event">
+                    <div class="event" data-progress="82">
                         <div class="year">2019</div>
-                        <div class="info"></div>
+                        <div class="info">Got placed in TestYantra Software solutions as software engineer and Trained students based on Technologies.</div>
                     </div>
-                    <div class="event">
+                    <div class="event" data-progress="100">
                         <div class="year">2021</div>
-                        <div class="info"></div>
+                        <div class="info">Resigned my Job and decided to study more to gain more powerful technical skills.</div>
                     </div>
                 </div>
-                <div class="travel"></div>
+                <div class="travel">
+                    <div class="progress">
+                    </div>
+                </div>
             </div>
             <div class="vert-line"></div>
             <div class="horz-line"></div>
         </section>
-        <section>
+        <section class="screen-3">
+            <div class="content">
 
+            </div>
+            <div class="vert-line"></div>
+            <div class="horz-line"></div>
         </section>
     </main>
     <footer>
-        
+        <div class="footline">
+            All rights are resreved &copy;2022 | abhijit vilas padyal
+        </div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="./app.js"></script>
 </body>
 </html>
