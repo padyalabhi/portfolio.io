@@ -359,7 +359,7 @@ footer > .footline {
     height: 40px;
     width: 35px;
   }
-  
+
   .screen-1,.screen-2,.screen-3{
     margin: 0;
   }
@@ -431,15 +431,15 @@ footer > .footline {
     width: 25px;
   }
   main > .screen-1{
-    height: 80vh;
+    height: 90vh;
     flex-direction: column-reverse;
   }
   main > .screen-1 > .profile > img{
     height: 40vh;
   }
   main > .screen-1 > .content { 
-    height: 15rem;
-    width: 30rem;
+    height: 30rem;
+    width: 25rem;
     padding: .5rem;
     transform: translateX(0px);
   }
