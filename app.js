@@ -31,7 +31,6 @@ function makeItDark()
 }
 
 screenMode.addEventListener("click",()=>{
-    console.log('clicked');
     if(brightnessState)
     {
         brighMode.style.display = "none";
