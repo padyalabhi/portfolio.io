@@ -15,6 +15,8 @@ function makeItBright()
   document.documentElement.style.setProperty('--lineColor','black');
   document.documentElement.style.setProperty('--lineShade1','rgba(0, 0, 0, 0.1)');
   document.documentElement.style.setProperty('--lineShade2','rgba(0, 0, 0, 0.1)');
+  document.documentElement.style.setProperty('--cardColor',"#FBF8F1");
+  document.documentElement.style.setProperty('--yearColor',"#0E185F");
 }
 
 function makeItDark()
@@ -24,6 +26,8 @@ function makeItDark()
     document.documentElement.style.setProperty('--lineColor','white');
     document.documentElement.style.setProperty('--lineShade1','rgba(255, 255, 255, 0.1)');
     document.documentElement.style.setProperty('--lineShade2','rgba(255, 255, 255, 0.1)');
+    document.documentElement.style.setProperty('--cardColor',"#1B262C");
+  document.documentElement.style.setProperty('--yearColor',"#BBE1FA");
 }
 
 screenMode.addEventListener("click",()=>{
@@ -77,6 +81,31 @@ events.forEach((item)=>{
     });
 });
 
+// contacts detailing
+var icons = document.querySelectorAll(".contact > ul > li");
+icons.forEach((item)=>{
+    item.addEventListener("mouseover", ()=>{
+        var path = item.querySelectorAll("path");
+        var ele = item.querySelector("svg");
+        ele.style.filter = "drop-shadow(0px 10px 1px rgb(166, 166, 166,0.5))";
+        ele.style.transition = ".7s";
+        item.style.transform = "translate3d(0px,-20px,0px)";
+        item.style.transition = ".7s";
+        
+        
+    });
+
+    item.addEventListener("mouseout", ()=>{
+        var path = item.querySelectorAll("path");
+        path.forEach((i)=>{
+            var ele = item.querySelector("svg");
+            ele.style.filter = "drop-shadow(0px 0px 0px rgb(166, 166, 166,0.4))";
+        })
+        item.style.transform = "translate3d(0px,0px,0px)";
+    });
+});
+
+
+
+
 /* page load animation */
-gsap.from(profilPicture,{x:100, opacity:0, duration : 1.3})
-gsap.from(".screen-1>.content",{x:-100,opacity:0,duration : 1.3});

@@ -9,7 +9,8 @@
   --lineColor : black;
   --lineShade1 : rgba(0, 0, 0, 0.1);
   --lineShade2 : rgba(0, 0, 0, 0.1);
-
+  --cardColor : #FBF8F1;
+  --yearColor : #0E185F;
 }
 /* body essentials */
 body{
@@ -226,12 +227,11 @@ main > .screen-2 > .vert-line {
 }
 .screen-2 > .content > .journey > .event{
   height: 55vh;
-  background: var(--backgroundColor);
+  background: var(--cardColor);
   color: var(--fontColor);
   box-shadow: 0px 0px 1px var(--fontColor);
 }
 .screen-2 > .content > .journey > .event:hover{
-  /* box-shadow: 0px 10px 10px -1px var(--fontColor); */
   transform: translateY(-10px);
   transition: all 1.3s;
 }
@@ -240,7 +240,7 @@ main > .screen-2 > .vert-line {
   font-size: 1.3rem;
   font-weight: bold;
   margin: 10px 0px;
-  color: #0E185F;
+  color: var(--yearColor);
 }
 
 .screen-2 > .content > .journey > .event > .info {
@@ -294,6 +294,27 @@ main > .screen-3 {
   position: absolute;
   bottom: 0px;
   left: 0px;
+}
+.screen-3 > .content {
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.screen-3 > .content > .contact >  ul {
+  display: flex;
+  list-style-type: none;
+  position: relative;
+}
+.screen-3 > .content > .contact >  ul > li {
+  padding: .5rem;
+}
+.screen-3 > .content > .contact >  ul > li > a > svg {
+  height: 60px;
+  width: 60px;
+}
+.screen-3 > .content > .contact >  ul > li > a > svg > path{
+  fill: var(--fontColor);
 }
 /* footer */
 footer {
@@ -390,6 +411,10 @@ footer > .footline {
   .screen-2 > .content > .travel {
     display: none;
   }
+  .screen-3 > .content > .contact >  ul > li > a > svg {
+    height: 40px;
+    width: 40px;
+  }
   footer {
     margin: 5% 0%;
   }
@@ -397,6 +422,9 @@ footer > .footline {
 @media only screen and (max-width: 640px) {
   :root{
     font-size: 14px;
+  }
+  header > .content > .heading{
+    font-size: 1.7rem;
   }
   .screen-1 >.vert-line {
     display: none;
@@ -479,6 +507,10 @@ footer > .footline {
     font-size: 1.5rem;
     padding: 2px;
     text-align: center;
+  }
+  .screen-3 > .content > .contact >  ul > li > a > svg {
+    height: 40px;
+    width: 40px;
   }
   footer {
     background-color: black;
