@@ -1,7 +1,33 @@
 var screenMode = document.querySelector("div.bright");
 var brighMode = document.querySelector("img.bright");
 var darkMode = document.querySelector("img.dark");
+var events = document.querySelectorAll(".event");
+var progress = document.querySelector(".progress");
 var brightnessState = true;
+gsap.config({ force3D : false});
+
+/* page load animation */
+var pageLoad = gsap.timeline();
+var header = document.querySelector("header");
+var aboutMe = document.querySelector(".screen-1>.content");
+var myProfile = document.querySelector(".screen-1>.profile");
+pageLoad.from(header, { y : -100 , duration : .9 , opacity : 0})
+        .from(aboutMe,{x : -100 , duration : .6 , opacity : 0}, "<.7")
+        .from(myProfile,{x:100 , duration : .6 , opacity : 0},"<")
+        .set(events,{y : 100 , duration : .5 , opacity : 0}, "<");
+
+window.addEventListener("scroll", ()=>{
+    var section2 = document.querySelector(".screen-2");
+    var section2height = section2.getBoundingClientRect().top;
+    if(section2height < 240)
+    {
+        events.forEach((item)=>{
+            pageLoad.to(item,{y : 0 , duration : .9 , opacity : 1}, "<.2");
+        });
+        
+    }
+});
+
 
 var brightnessTimeline = gsap.timeline({ repeat : -1 , repeatDelay : 0.1});
 brightnessTimeline.to(".bright>img",{rotation : "90_cw" , duration : 2})
@@ -50,25 +76,22 @@ screenMode.addEventListener("click",()=>{
 var menuButton = document.querySelector("button.menu");
 var menuList = document.querySelector(".menu-page");
 var isMenuVisible = false;
-var menuListTimeline = gsap.timeline({paused : true});
-menuListTimeline.to(menuList,{x:0,duration:0.7,opacity:0.9});
+
 menuButton.addEventListener("click", ()=>{
     if(!isMenuVisible)
     {
         menuList.style.visibility = "visible";
         isMenuVisible = true;
-        menuListTimeline.play();
+        gsap.to(menuList,{x:0,duration:0.7,opacity:0.9});
     }
     else
     {
         menuList.style.visibility = "hidden";
         isMenuVisible = false;
-        menuListTimeline.reverse();
     }
 });
 
-var events = document.querySelectorAll(".event");
-var progress = document.querySelector(".progress");
+
 events.forEach((item)=>{
     item.addEventListener("mouseover",()=>{
         progress.style.width = item.dataset.progress+"%";
@@ -107,4 +130,6 @@ icons.forEach((item)=>{
 
 
 
-/* page load animation */
+
+
+        
